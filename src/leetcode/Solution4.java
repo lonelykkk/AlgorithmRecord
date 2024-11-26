@@ -12,27 +12,22 @@ package leetcode;
  */
 class Solution4 {
     public boolean canJump(int[] nums) {
-        int i = 0;
-        int arr[] = new int[nums.length];
-        arr[i] = 1;
-        while (true) {
-            i += nums[i];
-            if (i >= nums.length - 1) {
-                break;
-            }
-
-            if (i == 0) {
+        int max = 0;
+        int k = 0;
+        int len = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            if (i <= max) {
+                k = i + nums[i];
+            }else {
                 return false;
             }
-            while (arr[i] == 1) {
-                i--;
-                if (i == 0) {
-                    return false;
-                }
+
+            max = Math.max(max, k);
+            if (max >= nums.length) {
+                return true;
             }
-            arr[i] = 1;
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
