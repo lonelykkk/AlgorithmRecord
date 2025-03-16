@@ -12,18 +12,19 @@ package leetcode.hot100;
 public class 缺失的第一个正数 {
     public int firstMissingPositive(int[] nums) {
         boolean[] flag = new boolean[100010];
-        int maxn = 2 << 31 - 1;
-        for (int i = 0; i < nums.length; i++) {
+        int len1 = nums.length;
+        int len2 = flag.length;
+        for (int i = 0; i < len1; i++) {
             if (nums[i] > 0 && nums[i] < flag.length) {
                 flag[nums[i]] = true;
             }
         }
 
-        for (int i = 1; i < flag.length; i++) {
+        for (int i = 1; i < len2; i++) {
             if (!flag[i]) {
                 return i;
             }
         }
-        return nums.length;
+        return len1;
     }
 }
