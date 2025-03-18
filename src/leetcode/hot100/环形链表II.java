@@ -1,7 +1,7 @@
 package leetcode.hot100;
 
 /**
- * 141. 环形链表
+ * 142. 环形链表 II
  *
  * 链接：
  * https://leetcode.cn/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-100-liked
