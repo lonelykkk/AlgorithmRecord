@@ -11,7 +11,7 @@ public class K个一组翻转链表 {
         ListNode hair = new ListNode();
         hair.next = head;
         ListNode pre = hair;
-        while (pre != null) {
+        while (head != null) {
             ListNode tail = pre;
             for (int i = 0; i < k; i++) {
                 tail = tail.next;
